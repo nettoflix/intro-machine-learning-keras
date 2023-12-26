@@ -1,24 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "Anaconda (Python 3)",
-  "build": {
-    "context": "..",
-    "dockerfile": "Dockerfile"
-  },
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-      "clean_ppas": true,
-      "preserve_apt_list": true,
-      "packages": "build-essential",
-      "ppas": "ppa:deadsnakes/ppa"
-    },
-    "ghcr.io/devcontainers-contrib/features/bash-command:1": {
-      "command": "echo hi!"
-    },
-    "ghcr.io/akhildevelops/devcontainer-features/pip:0": {}
-  },
-
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
@@ -26,7 +8,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "python --version",
+  // "postCreateCommand": "pip3 install --user -r requirements.txt",
 
   // Configure tool-specific properties.
   "customizations": {
@@ -42,7 +24,4 @@
   "runArgs": ["--init", "--security-opt", "seccomp=unconfined"],
   "forwardPorts": [6080, 5901],
   "overrideCommand": false
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
 }
